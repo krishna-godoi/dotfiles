@@ -1,0 +1,99 @@
+// -*- mode: jsonc -*-
+{
+	"layer": "top", // Waybar at top layer
+	"position": "bottom", // Waybar position (top|bottom|left|right)
+	"height": 32, // Waybar height (to be removed for auto height)
+	"margin": "0 6 6 6",
+	"spacing": 0, // Gaps between modules (4px)
+	"modules-left": [
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+	],
+	"modules-right": [
+		"cpu",
+		"memory",
+		"disk",
+		"custom/sep",
+		"pulseaudio",
+		"custom/sep",
+		"network",
+		"custom/sep",
+		"clock",
+		"tray"
+	],
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"warp-on-scroll": false,
+		"format": "{icon}",
+		"format-icons": {
+			"default": "⬤"
+		},
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": []
+		}
+	},
+	"hyprland/mode": {
+		"format": "<span style=\"italic\">{}</span>"
+	},
+	"hyprland/scratchpad": {
+		"format": "{icon} {count}",
+		"show-empty": false,
+		"format-icons": ["", ""],
+		"tooltip": true,
+		"tooltip-format": "{app}: {title}"
+	},
+	"hyprland/window":{
+		"format": "{initialTitle}"
+	},
+	"custom/sep": {
+		"format": "/"
+	},
+	"tray": {
+	// "icon-size": 21,
+	"spacing": 10
+	},
+	"clock": {
+	 "timezone": "America/Sao_Paulo",
+	"tooltip-format": "<tt><big>{calendar}</big></tt>",
+	"format-alt": "{:%a, %D}"
+	},
+	"cpu": {
+		"format-icons": ["󰍛"],
+		"format": "<span font_size=\"x-large\">{icon}</span> <span rise=\"1.6pt\">{usage}%</span>",
+		"tooltip": false
+	},
+	"memory": {
+		"format-icons": [""],
+		"format": "<span font_size=\"medium\">{icon}</span> {used:0.2f} <span font_style=\"italic\">GB</span>"
+	},
+	"disk": {
+		"format":"<span font_size=\"large\">󰋊</span> {specific_free:0.2f} <span font_style=\"italic\">GB</span>",
+		"unit": "GB"
+	},
+	"network": {
+	// "interface": "wlp2*", // (Optional) To force the use of this interface
+	"interval": 30,
+	"format-icons" : ["󰤯", "󰤟", "󰤢", "󰤥",  "󰤨"],
+	"format-wifi": "{icon} {essid}",
+	"format-ethernet": "{ipaddr}/{cidr} ",
+	"tooltip-format": "{ifname} via {gwaddr} ",
+	"format-linked": "{ifname} (No IP) ",
+	"format-disconnected": "Disconnected ⚠",
+	"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"pulseaudio": {
+	"format": "{icon}  {volume}%",
+	"format-muted": "  Muted",
+	"format-icons": ["", "", ""],
+	"on-click": "pavucontrol"
+	}
+}
