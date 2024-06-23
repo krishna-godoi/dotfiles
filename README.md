@@ -2,6 +2,7 @@
 ```
 sudo dnf install fzf golang hyprland hyprpaper lazygit neovim pavucontrol snapd stow waybar zoxide zsh
 ```
+Install yazi from homebrew
 
 ### 2 - Clone the repo
 ```
