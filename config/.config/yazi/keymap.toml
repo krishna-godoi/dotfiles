@@ -1,0 +1,5 @@
+[manager]
+prepend_keymap = [
+		{ on = [ "J" ], run = 'seek 1', desc = "Scroll down preview" },	
+		{ on = [ "K" ], run = 'seek -1', desc = "Scroll up preview" },	
+]

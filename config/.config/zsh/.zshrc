@@ -48,3 +48,5 @@ function () {
 if [ "$TMUX" = "" ]; then tmux new -A -s main; fi
 
 export PATH=$PATH:/home/krisc/.spicetify
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
