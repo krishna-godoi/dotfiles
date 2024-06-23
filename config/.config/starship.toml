@@ -54,3 +54,15 @@ format = " [$path](fg:white) "
 [cmd_duration]
 format = "[$duration]($style) "
 style = "italic #666666"
+
+[git_status]
+format = "([$ahead_behind$modified$staged]($style) )"
+ahead = "[\u2191](fg:green)"
+behind = "[\u2193](fg:green)"
+conflicted = "!"
+staged = "[+](fg:green)"
+modified = "[~](fg:yellow)"
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+symbol = "\uf418 "
