@@ -1,3 +1,6 @@
+local discipline = require("discipline")
+discipline.cowboy()
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 

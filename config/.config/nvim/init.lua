@@ -11,8 +11,10 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 -- NOTE: Here is where you install your plugins.
-require("lazy").setup({
-  { import = "plugins" },
+require("lazy").setup("plugins", {
+  change_detection = {
+    notify = false,
+  },
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
