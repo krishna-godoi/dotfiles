@@ -1,41 +1,39 @@
 * {
-    font-family: "JetBrainsMono Nerd Font", serif;
-    font-size: 10px;
+	font-family: "JetBrainsMono Nerd Font", serif;
+	font-size: 10px;
 }
 
 window#waybar {
-    background-color: rgba(18, 18, 20, 1);
-    color: #ffffff;
+	background-color: rgba(18, 18, 20, 0.85);
+	border-radius: 6px;
+	color: #ffffff;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+	opacity: 0.2;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background: inherit;
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
+	background: inherit;
 }
 
 #workspaces button {
-    padding: 0 4px;
-    color: #666666;
+	padding: 0 4px;
+	color: #999999;
 }
 
 #workspaces button.persistent.empty {
-    color: #272729;
+	color: #383838;
 }
 
-#workspaces button.active, #workspaces button.persistent.empty.active {
-    color: #ff477f;
+#workspaces button.active,
+#workspaces button.persistent.empty.active {
+	color: #ff477f;
 }
 
 #workspaces button.urgent {
-    color: #eb4d4b;
+	color: #eb4d4b;
 }
 
 #clock,
@@ -55,82 +53,79 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 6px;
-    color: #ffffff;
+	padding: 0 6px;
+	color: #ffffff;
 }
 
 #window,
 #workspaces {
-    color: #ff477f;
-    font-weight: 700;
+	color: #ff477f;
+	font-weight: 700;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 9px;
+.modules-left>widget:first-child>#workspaces {
+	margin-left: 9px;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #clock {
-    margin-right: 4px;
+.modules-right>widget:last-child>#clock {
+	margin-right: 4px;
 }
 
 .modules-right * {
-    font-size: 12px;
+	font-size: 12px;
 }
 
 .modules-center * {
-    font-size: 12px;
+	font-size: 12px;
 }
 
 #clock {
-    color: #ff477f;
-    font-weight: 900;
+	color: #ff477f;
+	font-weight: 900;
 }
 
 #cpu {
-    color: #666666;
+	color: #999999;
 }
 
 #memory {
-    color: #666666;
+	color: #999999;
 }
 
 #disk {
-    color: #666666;
+	color: #999999;
 }
 
 #disk#text {
-    color: red;
+	color: red;
 }
 
 #network {
-    color: #6fc487;
+	color: #6fc487;
 }
 
 #network.disconnected {
-    color: #cc5c67;
+	color: #cc5c67;
 }
 
 #pulseaudio {
-    color: #666;
+	color: #999999;
 }
 
 #pulseaudio.muted {
-    color: #f14c4c;
+	color: #f14c4c;
 }
 
-#tray {
+#tray>.passive {
+	-gtk-icon-effect: dim;
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
+#tray>.needs-attention {
+	-gtk-icon-effect: highlight;
 }
 
 #custom-sep {
-	color: #666666;
+	color: #999999;
 }

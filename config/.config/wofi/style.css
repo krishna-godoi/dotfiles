@@ -6,7 +6,7 @@
 
 window {
 	margin: 5px;
-	background-color: #1c1c1f;
+	background-color: rgba(20, 20, 24, 0.9);
 	border-radius: 6px;
 }
 
@@ -32,7 +32,7 @@ window {
 #text {
 	color: #999999;
 	margin: 2px;
-} 
+}
 
 #outer-box {
 	margin: 6px;
@@ -41,4 +41,3 @@ window {
 #scroll {
 	margin: 4px;
 }
-
