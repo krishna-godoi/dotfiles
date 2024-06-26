@@ -22,8 +22,6 @@ vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]], { desc = "Yank current line i
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste over selection without overriding register" })
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make current file executable" })
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- NOTE: ZZ keymaps for centering the current line after certain actions
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "" })
