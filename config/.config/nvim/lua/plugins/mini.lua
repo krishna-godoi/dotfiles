@@ -1,4 +1,4 @@
-return { -- Collection of various small independent plugins/modules
+return {
   "echasnovski/mini.nvim",
   config = function()
     -- Better Around/Inside textobjects
@@ -9,19 +9,16 @@ return { -- Collection of various small independent plugins/modules
     --  - ci'  - [C]hange [I]nside [']quote
     require("mini.ai").setup({ n_lines = 500 })
 
-    require("mini.bracketed").setup({
-      comment = { suffix = "", options = {} },
-    })
-
     -- gS to toggle split arguments into multiple lines
     require("mini.splitjoin").setup()
 
+    -- Move visually selected text with Ctrl + h,j,k,l
     require("mini.move").setup({
       mappings = {
-        left = "<C-H>",
-        down = "<C-J>",
-        up = "<C-K>",
-        right = "<C-L>",
+        left = "<C-h>",
+        down = "<C-j>",
+        up = "<C-k>",
+        right = "<C-l>",
       },
     })
 
