@@ -12,6 +12,8 @@ return {
     -- gS to toggle split arguments into multiple lines
     require("mini.splitjoin").setup()
 
+	require("mini.bracketed").setup()
+
     -- Move visually selected text with Ctrl + h,j,k,l
     require("mini.move").setup({
       mappings = {
