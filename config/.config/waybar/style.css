@@ -4,8 +4,8 @@
 }
 
 window#waybar {
-	background-color: rgba(18, 18, 20, 0.85);
-	border-radius: 6px;
+	background-color: rgba(18, 18, 20, 1);
+	border-radius: 0px;
 	color: #ffffff;
 }
 
@@ -29,11 +29,11 @@ button:hover {
 
 #workspaces button.active,
 #workspaces button.persistent.empty.active {
-	color: #ff477f;
+	color: #ff578a;
 }
 
 #workspaces button.urgent {
-	color: #eb4d4b;
+	color: #a13131;
 }
 
 #clock,
@@ -59,7 +59,7 @@ button:hover {
 
 #window,
 #workspaces {
-	color: #ff477f;
+	color: #ff578a;
 	font-weight: 700;
 }
 
@@ -82,7 +82,7 @@ button:hover {
 }
 
 #clock {
-	color: #ff477f;
+	color: #ff578a;
 	font-weight: 900;
 }
 
