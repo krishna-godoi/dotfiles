@@ -75,7 +75,9 @@ return {
 
     local servers = {
       gopls = {},
-      tsserver = {},
+      ts_ls = {},
+      eslint = {},
+      prettier = {},
       lua_ls = {
         settings = {
           Lua = {

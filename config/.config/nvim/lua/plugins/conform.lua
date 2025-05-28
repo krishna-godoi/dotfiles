@@ -17,7 +17,9 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       go = { "gofmt" },
-      javascript = { { "prettierd", "prettier" } },
+      javascript = { "prettier", "prettierd", stop_on_error = true },
+      typescript = { "prettier", "prettierd", stop_after_first = true },
+      typescriptreact = { "prettier", "prettierd", stop_after_first = true },
     },
   },
 }

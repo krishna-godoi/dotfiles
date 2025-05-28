@@ -6,6 +6,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 
 export GOPATH="$XDG_DATA_HOME"/go
 export NODE_GYP_FORCE_PYTHON=/usr/bin/python
+export LD_LIBRARY_PATH=/usr/local/lib
 
 export WAKATIME_HOME="$XDG_CONFIG_HOME"/wakatime
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc

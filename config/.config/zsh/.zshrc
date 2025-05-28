@@ -48,5 +48,10 @@ function () {
 if [ "$TMUX" = "" ]; then tmux new -A -s main; fi
 
 export PATH=$PATH:/home/krisc/.spicetify
+export PATH=$PATH:/var/lib/flatpak/exports/share
+export PATH=$PATH:/home/krisc/.local/share/flatpak/exports/share
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Created by `pipx` on 2024-09-11 21:42:34
+export PATH="$PATH:/home/krisc/.local/bin"

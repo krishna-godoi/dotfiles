@@ -1,0 +1,50 @@
+: 1726269063:0;echo $LD_LIBRARY_PATH
+: 1726269067:0;runescape-launcher
+: 1726269101:0;cd /tmp
+: 1726269107:0;sudo apt install libssl-dev liblzo2-dev libpam0g-dev
+: 1726269149:0;wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.16_amd64.deb\
+wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl-dev_1.1.1f-1ubuntu2.16_amd64.deb\
+wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb
+: 1726269165:0;sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb\
+sudo dpkg -i libssl-dev_1.1.1f-1ubuntu2.16_amd64.deb\
+sudo dpkg -i openssl_1.1.1f-1ubuntu2.16_amd64.deb
+: 1726269178:0;runescape-launcher
+: 1726269195:0;sudo apt remove runescape-launcehr
+: 1726269198:0;sudo apt remove runescape-launcher
+: 1726269203:0;cd
+: 1726269203:0;clear
+: 1726269208:0;cd projects/hummingbirdbakery
+: 1726269237:0;flatpak install com.jagex.Runescape
+: 1726269244:0;flatpak install com.jagex.RuneScape
+: 1726269684:0;sudo flatpak remove com.jagex.RuneScape
+: 1726269692:0;sudo snap install runescape
+: 1726269698:0;sudo snap install RuneScape
+: 1726269799:0;curl -fSsL https://raw.githubusercontent.com/USA-RedDragon/jagex-launcher-linux-flatpak/main/install.sh | bash
+: 1726270180:0;sudo apt install btop
+: 1726270183:0;btop
+: 1726270559:0;clear
+: 1726271407:0;sudo apt install discord
+: 1726271417:0;sudo snap install discord
+: 1726271613:0;cd
+: 1726271616:0;git clone https://github.com/gaffe23/linux-inject.git
+: 1726271620:0;cd linux-inject
+: 1726271621:0;make
+: 1726271624:0;make install
+: 1726271642:0;  make x86_64
+: 1726271649:0;sudo apt install clang
+: 1726271673:0;make
+: 1726271681:0;  make x86_64
+: 1726271690:0;sudo apt install libc
+: 1726271724:0;sudo apt install libc-dev
+: 1726271732:0;make x86_64
+: 1726271744:0;ls
+: 1726271818:0;./inject -n rs2client ~/Downloads/Build_DLL/XInput1_4_inject.dll
+: 1726271845:0;killall rs2client
+: 1726271858:0;killall runescape-client
+: 1726271863:0;killall runescape
+: 1726271878:0;killall jagex
+: 1726271882:0;killall jagex-launcher
+: 1726271885:0;btop
+: 1726271896:0;killall rs2client
+: 1726271907:0;sudo killall rs2client
+: 1726271915:0;reboot

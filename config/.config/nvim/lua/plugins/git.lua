@@ -11,6 +11,22 @@ return {
         topdelete = { text = "‾" },
         changedelete = { text = "~" },
       },
+      signcolumn = true,
+      numhl = false,
+      linehl = false,
+      word_diff = false,
+      watch_gitdir = {
+        interval = 1000,
+        follow_files = true,
+      },
+      attach_to_untracked = true,
+      current_line_blame = false,
+      current_line_blame_opts = {
+        virt_text = true,
+        virt_text_pos = "eol",
+        current_line_blame = false,
+        delay = 1000,
+      },
       on_attach = function(bufnr)
         local gitsigns = require("gitsigns")
 
