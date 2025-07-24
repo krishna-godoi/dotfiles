@@ -23,6 +23,3 @@ vim.o.conceallevel = 2
 vim.o.hlsearch = false
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
--- vim.g.augment_workspace_folders = {"~/projects/boulder-app/"}
--- vim.g.augment_workspace_folders = {"~/projects/sis", "~/projects/sis-nextjs"}
-vim.g.augment_workspace_folders = { "~/projects/revio" }

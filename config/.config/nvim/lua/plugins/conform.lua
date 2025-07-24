@@ -21,5 +21,10 @@ return {
       typescript = { "prettier", "prettierd", stop_after_first = true },
       typescriptreact = { "prettier", "prettierd", stop_after_first = true },
     },
+    formatters = {
+      prettier = {
+        prepend_args = { "--single-quote" },
+      },
+    },
   },
 }

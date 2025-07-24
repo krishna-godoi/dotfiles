@@ -6,8 +6,8 @@ return {
     vim.g.onedark_config = {
       style = "cool", -- dark, darker, cool, deep, warm, warmer, light
       colors = {
-        bg0 = "#121214",
-        bg1 = "#202020",
+        bg0 = "#060608",
+        bg1 = "#121214",
         bg3 = "#303030",
         green = "#5fd988",
         cyan = "#c88ee8",

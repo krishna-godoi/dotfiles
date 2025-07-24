@@ -5,6 +5,7 @@ export XDG_CACHE_HOME="$HOME"/.cache
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 
 export GOPATH="$XDG_DATA_HOME"/go
+export PATH=$PATH:/usr/local/go/bin
 export NODE_GYP_FORCE_PYTHON=/usr/bin/python
 export LD_LIBRARY_PATH=/usr/local/lib
 

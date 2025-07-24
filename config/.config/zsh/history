@@ -48,3 +48,31 @@ sudo dpkg -i openssl_1.1.1f-1ubuntu2.16_amd64.deb
 : 1726271896:0;killall rs2client
 : 1726271907:0;sudo killall rs2client
 : 1726271915:0;reboot
+: 1749317273:0;go version
+: 1749317274:0;clear
+go get -u github.com/replicate/replicate-go
+sudo apt-get remove --auto-remove golang-go
+wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go
+tar -C ~/.local -xzf go1.23.0.linux-amd64.tar.gz
+go get -u github.com/replicate/replicate-go
+source ~/.config/zsh/.zshenv
+go get -u github.com/replicate/replicate-go
+mkdir -p types
+lsof -i :8080
+kill -9 124755
+curl -X POST -H "Content-Type: application/json" -d '{"youtube_url": "https://www.youtube.com/watch?v=M-P4QBt-FWw"}' http://localhost:8080/api/v1/decks
+go run main.go
+source ~/.config/zsh/.zshenv 
+go run main.go
+go run main.go
+source ~/.config/zsh/.zshrc 
+source ~/.config/zsh/.zshenv
+go run main.go
+mkdir langoose
+mkdir -p langoose/packages/api/src
+cd langoose && pnpm install
+source ~/.zshrc && bun install
+bun install
+bun install

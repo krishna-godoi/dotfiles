@@ -7,6 +7,8 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
+WORDCHARS=''
+
 # Preseve history to file shared between shells
 HISTFILE=${ZDOTDIR:-~/.config/zsh}/.zsh_history
 HISTSIZE=10000
@@ -45,8 +47,6 @@ function () {
 	done
 }
 
-if [ "$TMUX" = "" ]; then tmux new -A -s main; fi
-
 export PATH=$PATH:/home/krisc/.spicetify
 export PATH=$PATH:/var/lib/flatpak/exports/share
 export PATH=$PATH:/home/krisc/.local/share/flatpak/exports/share
@@ -55,3 +55,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Created by `pipx` on 2024-09-11 21:42:34
 export PATH="$PATH:/home/krisc/.local/bin"
+
+# bun completions
+[ -s "/home/krisc/.bun/_bun" ] && source "/home/krisc/.bun/_bun"
