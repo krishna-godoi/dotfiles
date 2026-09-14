@@ -1,0 +1,4 @@
+-- Loads the pi <-> Neovim bridge commands and mappings.
+-- Configuration can be overridden before this plugin loads with:
+--   require('pi_bridge').setup({ socket = '/custom/socket' })
+require('pi_bridge')

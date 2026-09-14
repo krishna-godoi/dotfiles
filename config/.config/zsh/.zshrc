@@ -23,6 +23,29 @@ setopt HIST_NO_STORE
 alias vim="nvim"
 alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/tmux.conf"'
 
+# git aliases
+alias g='git'
+alias gs='git status'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias ga='git add'
+alias gaa='git add -A'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gca='git commit --amend'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gb='git branch'
+alias gm='git merge'
+alias gcp='git cherry-pick'
+alias gp='git push'
+alias gpf='git push --force-with-lease'
+alias gl='git pull'
+alias gf='git fetch'
+alias grs='git reset'
+alias gss='git stash'
+alias glog='git log --oneline --graph --decorate -20'
+
 # antidote package manager
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 # load plugins from .zsh_plugins.txt
@@ -58,3 +81,11 @@ export PATH="$PATH:/home/krisc/.local/bin"
 
 # bun completions
 [ -s "/home/krisc/.bun/_bun" ] && source "/home/krisc/.bun/_bun"
+
+# opencode
+export PATH=/home/krisc/.opencode/bin:$PATH
+
+. "$HOME/.local/share/../bin/env"
+
+# Pi
+export PATH="/home/krisc/.local/share/pi-node/node-v22.23.0-linux-x64/bin:$PATH"

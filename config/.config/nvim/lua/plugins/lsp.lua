@@ -77,7 +77,7 @@ return {
       gopls = {},
       ts_ls = {},
       eslint = {},
-      prettier = {},
+      astro = {},
       lua_ls = {
         settings = {
           Lua = {

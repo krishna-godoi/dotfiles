@@ -13,3 +13,9 @@ if [ -f "$HOME/"'.magento-cloud/shell-config.rc' ]; then . "$HOME/"'.magento-clo
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH=$PATH:~/.spicetify
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# personal scripts (harbor: locate + ssh the X99 box)
+export PATH="$HOME/bin:$PATH"

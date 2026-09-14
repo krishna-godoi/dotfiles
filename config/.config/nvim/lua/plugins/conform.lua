@@ -23,7 +23,7 @@ return {
     },
     formatters = {
       prettier = {
-        prepend_args = { "--single-quote" },
+        prepend_args = { "--single-quote", "--tab-width=4" },
       },
     },
   },
