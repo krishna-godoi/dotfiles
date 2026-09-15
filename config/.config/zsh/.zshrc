@@ -72,20 +72,20 @@ function () {
 
 export PATH=$PATH:/home/krisc/.spicetify
 export PATH=$PATH:/var/lib/flatpak/exports/share
-export PATH=$PATH:/home/krisc/.local/share/flatpak/exports/share
+export PATH=$PATH:$HOME/.local/share/flatpak/exports/share
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[ -x /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Created by `pipx` on 2024-09-11 21:42:34
-export PATH="$PATH:/home/krisc/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # bun completions
-[ -s "/home/krisc/.bun/_bun" ] && source "/home/krisc/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # opencode
-export PATH=/home/krisc/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH
 
-. "$HOME/.local/share/../bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 
 # Pi
 export PATH="/home/krisc/.local/share/pi-node/node-v22.23.0-linux-x64/bin:$PATH"
