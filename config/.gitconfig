@@ -1,0 +1,9 @@
+[core]
+	autocrlf = false
+	sshCommand = ssh -i ~/.ssh/id_ed25519
+[safe]
+	directory = /home/krisc/projects/automann
+	directory = /var/www/hummingbirdbakery
+[user]
+	name = krishna-godoi
+	email = kriscdesign@gmail.com
