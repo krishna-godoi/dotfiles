@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+"""Resample density-ramp ASCII art to a target width.
+
+Maps glyphs -> brightness levels, block-averages, re-maps to the ramp.
+  ascii-fit FILE WIDTH [--squash] [--ramp RAMP]
+  --squash  halve the output height (use only if the SOURCE does not already
+            compensate for terminal cells being ~2:1 tall)
+"""
+import sys, argparse
+
+ap = argparse.ArgumentParser()
+ap.add_argument('file'); ap.add_argument('width', type=int)
+ap.add_argument('--squash', action='store_true')
+ap.add_argument('--ramp', default=' :.;+xX$&')
+a = ap.parse_args()
+
+LV = {c: i for i, c in enumerate(a.ramp)}
+rows = [l.rstrip('\n') for l in open(a.file, encoding='utf-8', errors='replace')]
+while rows and not rows[-1].strip(): rows.pop()
+while rows and not rows[0].strip(): rows.pop(0)
+W = max(len(r) for r in rows); H = len(rows)
+rows = [r.ljust(W) for r in rows]
+g = [[LV.get(c, 0) for c in r] for r in rows]
+
+tw = a.width
+th = max(1, round(H * (tw / W) * (0.5 if a.squash else 1.0)))
+sx, sy = W / tw, H / th
+lo, hi = min(min(r) for r in g), max(max(r) for r in g)
+
+out = []
+for ty in range(th):
+    line = []
+    for tx in range(tw):
+        ys = range(int(ty*sy), max(int(ty*sy)+1, int((ty+1)*sy)))
+        xs = range(int(tx*sx), max(int(tx*sx)+1, int((tx+1)*sx)))
+        vals = [g[y][x] for y in ys for x in xs]
+        avg = sum(vals) / len(vals)
+        # stretch the surviving range back over the full ramp, so the
+        # averaging doesn't wash everything toward the middle
+        norm = (avg - lo) / (hi - lo) if hi > lo else 0
+        line.append(a.ramp[min(len(a.ramp)-1, max(0, round(norm * (len(a.ramp)-1))))])
+    out.append(''.join(line).rstrip())
+print(f"# {W}x{H} -> {tw}x{th}", file=sys.stderr)
+print('\n'.join(out))

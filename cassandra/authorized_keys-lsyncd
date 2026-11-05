@@ -1,0 +1,1 @@
+command="/usr/bin/rrsync -wo /home/krisc/projects/worker-toolkit-potion-polyglot/repos/potion-app",no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty,no-user-rc ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICqOnifClhTcZj1vu6gtgwB+5RWzYymFRgwUhEPl/SND lsyncd-to-krisc-local

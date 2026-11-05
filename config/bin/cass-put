@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Copy files/directories to the home dir on cassandra (the X99 box).
+#   cass-put / cput FILE...   -> rsync each FILE into ~ on cassandra
+# Uses `cassandra --ip` to find the box, so it works even when the IP moves.
+set -uo pipefail
+
+if [ $# -eq 0 ]; then
+  echo "usage: $(basename "$0") FILE..." >&2
+  exit 1
+fi
+
+ADDR=$("$HOME/bin/cassandra" --ip) || exit 1
+
+exec rsync -ahP -e "ssh -o StrictHostKeyChecking=accept-new -i $HOME/.ssh/id_ed25519 -o IdentitiesOnly=yes -o HostName=$ADDR -l krishna-godoi" \
+  "$@" cassandra:

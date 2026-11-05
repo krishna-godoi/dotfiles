@@ -17,5 +17,5 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:~/.spicetify
 export PATH="$HOME/.opencode/bin:$PATH"
 
-# personal scripts (harbor: locate + ssh the X99 box)
+# personal scripts (cassandra: locate + ssh the X99 box)
 export PATH="$HOME/bin:$PATH"

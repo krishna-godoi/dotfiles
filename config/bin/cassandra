@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# Locate the X99 box (cassandra) on the LAN by MAC and ssh into it.
+#   cassandra / cass   -> interactive shell
+#   cassandra uptime   -> run a command
+#   cassandra --ip     -> just print the address
+set -uo pipefail
+
+MAC="00:e0:4c:b6:04:ad"
+SSHUSER="krishna-godoi"
+MDNS_NAMES=(cassandra.local)
+
+find_by_arp() {
+  ip neigh 2>/dev/null | awk -v m="$MAC" '
+    tolower($0) ~ tolower(m) && /lladdr/ && $1 ~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/ { print $1; exit }'
+}
+
+sweep() {
+  # repopulate the neighbour table: one ping to every host on each local /24
+  local base
+  ip -4 -o addr show scope global 2>/dev/null | awk '{print $4}' | while read -r cidr; do
+    base=$(echo "${cidr%/*}" | awk -F. '{print $1"."$2"."$3}')
+    for i in $(seq 1 254); do ping -c1 -W1 "$base.$i" >/dev/null 2>&1 & done
+  done
+  wait 2>/dev/null
+}
+
+resolve() {
+  local ip name
+  # 1. neighbour table -- purely local, instant, no network round trip
+  ip=$(find_by_arp); [ -n "$ip" ] && { echo "$ip"; return 0; }
+  # 2. mDNS, capped at 1s each -- an unresolvable .local name otherwise blocks for 5s
+  for name in "${MDNS_NAMES[@]}"; do
+    ip=$(timeout 1 getent hosts "$name" 2>/dev/null | awk '{print $1; exit}')
+    [ -n "$ip" ] && { echo "$ip"; return 0; }
+  done
+  # 3. sweep to repopulate the neighbour table, then look again
+  echo "cassandra: not in arp cache, sweeping the LAN..." >&2
+  sweep
+  ip=$(find_by_arp); [ -n "$ip" ] && { echo "$ip"; return 0; }
+  return 1
+}
+
+ADDR=$(resolve) || { echo "cassandra: not found on this network (MAC $MAC)" >&2; exit 1; }
+
+if [ "${1:-}" = "--ip" ]; then echo "$ADDR"; exit 0; fi
+
+echo "cassandra: $ADDR" >&2
+exec ssh -o StrictHostKeyChecking=accept-new \
+     -i "$HOME/.ssh/id_ed25519" -o IdentitiesOnly=yes \
+     "$SSHUSER@$ADDR" "$@"
